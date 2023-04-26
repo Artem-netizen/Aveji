@@ -1,0 +1,22 @@
+//base
+@import './reset';
+@import './variables';
+@import './fonts';
+@import './mixins';
+@import './layout';
+
+//components
+@import '../../../components/header/header';
+@import '../../../components/header/menu';
+@import '../../../components/intro/intro';
+@import '../../../components/about/about';
+@import '../../../components/steps/steps';
+@import '../../../components/projects/projects';
+@import '../../../components/reviews/reviews';
+@import '../../../components/contact/contact';
+@import '../../../components/footer/footer';
+
+//UI
+@import '../../../UI/buttons/buttons';
+@import '../../../UI/form/form';
+@import '../../../UI/form/input';

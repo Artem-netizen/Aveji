@@ -1,0 +1,41 @@
+.reviews {
+  &-wrap {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(min(21.25rem, 100%), 1fr));
+  }
+
+  &__item {
+    background: $white;
+    border: 1px solid $dark;
+  }
+
+  &-card {
+    padding: 2.5rem;
+    text-align: center;
+    @include flex(flex);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    &__icon {
+      margin-bottom: $md-32;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: $md-20;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 20rem) {
+  .reviews {
+    &-wrap {
+      gap: $md-16;
+    }
+
+    &-card {
+      padding: $md-32;
+    }
+  }
+}

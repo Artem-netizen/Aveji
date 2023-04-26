@@ -1,0 +1,55 @@
+@media screen and (min-width: 20rem) {
+  .header {
+    padding-top: 0.5rem;
+  }
+
+  .nav,.phone {
+    display: none;
+  }
+
+  .logo {
+    display: inline-block;
+    width: min(1.625rem);
+    img,
+    svg {
+      width: 100%;
+    }
+  }
+}
+
+// 1024
+@media screen and (min-width: 64rem) {
+  .header {
+    padding-top: $sm-12;
+    &-wrap {
+      @include grid-col-18;
+      align-items: flex-start;
+    }
+  }
+
+  .logo {
+    width: min(2.5rem);
+  }
+
+  .nav,
+  .phone {
+    display: block;
+  }
+
+  .nav {
+    grid-column-start: 13;
+    &__list {
+      gap: 0.5rem;
+      @include flex(flex);
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .phone {
+    text-align: right;
+    grid-column-start: 16;
+    grid-column-end: 19;
+  }
+}
+

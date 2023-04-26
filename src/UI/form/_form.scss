@@ -1,0 +1,15 @@
+.form {
+  &-group {
+    margin-bottom: $md-16;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 20rem) {
+  .form {
+    margin-bottom: $md-28;
+    &-inner {
+      margin-bottom: $md-20;
+    }
+  }
+}

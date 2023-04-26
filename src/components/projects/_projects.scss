@@ -1,0 +1,104 @@
+@media screen and (min-width: 20rem) {
+  .projects {
+    &-container {
+      width: auto;
+      margin-left: max(0.938rem, calc(100% - 86rem) / 2);
+    }
+
+    &-list {
+      gap: $md-20;
+      overflow-x: auto;
+      @include flex(flex);
+      align-items: stretch;
+      scroll-padding: $md-20;
+      scroll-snap-type: x mandatory;
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+    }
+
+    &__item {
+      width: 70%;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: center;
+      .link {
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+        object-fit: cover;
+      }
+    }
+
+    &-desc {
+      padding: $sm-12;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      gap: $md-32;
+      transition: .3s;
+      @include flex(flex);
+      align-items: center;
+      background: $accent-disabled;
+      justify-content: space-between;
+    }
+
+    &__text {
+      color: $white;
+    }
+  }
+}
+
+//768
+@media screen and (min-width: 48rem) {
+  .projects {
+    &-container {
+      width: $container;
+      margin-left: auto;
+    }
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(21.5rem, 1fr));
+    }
+
+    &__item {
+      flex: unset;
+      width: auto;
+    }
+  }
+}
+
+//1024
+@media screen and (min-width: 64rem) {
+  .projects {
+    &__item {
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        
+        .projects-desc {
+          transform: translateY(0%);
+        }
+      }
+    }
+
+    &-desc {
+      transform: translateY(100%);
+    }
+  }
+}

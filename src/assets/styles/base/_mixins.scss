@@ -1,0 +1,63 @@
+@mixin flex($flex) {
+  display: $flex;
+}
+@mixin grid-col-6 {
+  display: grid;
+  grid-template-columns: $col-6;
+}
+
+@mixin grid-col-18 {
+  display: grid;
+  grid-template-columns: $col-18;
+}
+
+@mixin fontSize($font-family: true) {
+  color: $dark;
+  font-weight: 400;
+  @if $font-family {
+    font-family: $font-Roboto;
+  } @else {
+    font-family: $font-Helvetica;
+  }
+}
+
+@mixin mdFontSize_16 {
+  font-size: $md-16;
+  line-height: $lg-140;
+}
+
+@mixin mdFontSize_18 {
+  font-size: $md-18;
+  line-height: $md-21;
+}
+
+@mixin mdFontSize_20 {
+  font-size: $md-20;
+  line-height: $lg-140;
+}
+
+@mixin mdFontSize_24 {
+  font-size: $md-24;
+  line-height: 33px;
+}
+
+@mixin mdFontSize_28 {
+  font-size: $md-28;
+  line-height: $md-39;
+}
+
+@mixin mdFontSize_36 {
+  font-size: $md-36;
+  line-height: $lg-50;
+}
+
+@mixin lgFontSize_48 {
+  font-size: $lg-48;
+  line-height: $lg-66;
+}
+
+@mixin lgFontSize_72 {
+  line-height: $lg-120;
+  text-transform: uppercase;
+  font-size: clamp(2rem, 1.242rem + 3.79vw, 4.5rem);
+}

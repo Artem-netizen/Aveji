@@ -1,0 +1,90 @@
+//buttons 
+.btn {
+  @extend %btn_underline;
+  &-primary {
+    @extend %btn_primary;
+  }
+}
+
+%btn_underline {
+  position: relative;
+  transition: .3s;
+  align-items: flex-end;
+  @include flex(inline-flex);
+  text-transform: uppercase;
+  @include fontSize($font-family: true);
+
+  @media screen and (min-width: 20rem) {
+    margin-bottom: $md-24;
+    @include mdFontSize_18;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background: $dark;
+      transform: scaleX(1);
+      transition: transform .3s;
+      transform-origin: right bottom;
+    }
+  }
+
+  //1024
+  @media screen and (min-width: 64rem) {
+    @include mdFontSize_16;
+    &:hover {
+      color: $accent;
+      &::before {
+        background: $accent;
+        transform: scaleX(0);
+        transform-origin: left bottom;
+      }
+    }
+
+    &:active {
+      color: $accent-active;
+      &::before {
+        background: $accent-active;
+      }
+    }
+  }
+
+  //1260
+  @media screen and (min-width: 78.75rem) {
+    margin-bottom: 0;
+  }
+}
+
+%btn_primary {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: $sm-12 $md-20;
+  transition: .3s;
+  background: $dark;
+  @include flex(flex);
+  align-items: center;
+  justify-content: center;
+  @include fontSize($font-family: true);
+  color: $white;
+
+  &:is(:hover, :active, :focus) {
+    color: $dark;
+  }
+
+  &:is(:hover, :focus) {
+    background: $accent;
+  }
+
+  &:active {
+    background: $accent-active;
+  }
+
+  &:disabled {
+    color: $white-disabled;
+    background: $accent-disabled;
+  }
+}

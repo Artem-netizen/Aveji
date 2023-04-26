@@ -1,0 +1,81 @@
+@media screen and (min-width: 20rem) {
+  .intro {
+    padding-top: $md-20;
+    &__text {
+      margin-bottom: $md-24;
+      @include mdFontSize_16;
+      @include fontSize($font-family: true);
+    }
+  }
+  .title {
+    margin-bottom: $md-20;
+  }
+  .img {
+    width: 100%;
+    &:nth-child(4) {
+      height: 16.25rem;
+    }
+    &.desktop {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+//768
+@media screen and (min-width: 48rem) {
+  .img {
+    &:nth-child(4) {
+      height: 30rem;
+    }
+  }
+}
+
+// 1024
+@media screen and (min-width: 64rem) {
+  .intro {
+    padding-top: $md-39;
+    &-wrap {
+      row-gap: $md-39;
+    }
+
+    &__text {
+      @include mdFontSize_20;
+    }
+  }
+}
+
+//1260
+@media screen and (min-width: 78.75rem) {
+  .title {
+    margin-bottom: 0;
+    grid-column: 10 span;
+  }
+  .intro {
+    &__text {
+      margin-bottom: 0;
+      grid-row: 2 / 3;
+      grid-column: 6 span;
+    }
+  }
+  .btn {
+    grid-column-end: 19;
+    grid-column-start: 17;
+  }
+  .img {
+    &:nth-child(4) {
+      height: auto;
+      grid-row: 2 span;
+      grid-column-start: 10;
+      grid-column-end: 19;
+    }
+    &.desktop {
+      display: block;
+      grid-column: 4 span;
+    }
+  }
+}

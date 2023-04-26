@@ -1,0 +1,47 @@
+@media screen and (min-width: 20rem) {
+  .about {
+    &-box-text {
+      margin-bottom: $md-32;
+    }
+    &__text {
+      margin-bottom: $md-16;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  //benefits
+  .benefits {
+    gap: $md-20;
+    @include flex(flex);
+    flex-direction: column;
+    width: min(10rem, 100%);
+    &__subtitle {
+      @include mdFontSize_24;
+      @include fontSize($font-family: false);
+    }
+  }
+}
+
+//1260
+@media screen and (min-width: 78.75rem) {
+  .about {
+    &-wrap {
+        align-items: baseline;
+    }
+    &-inner {
+      grid-column-end: 15;
+    }
+    &-box-text {
+      margin-bottom: 2.75rem;
+    }
+  }
+
+  .benefits {
+    gap: $md-24;
+    &__subtitle {
+      @include mdFontSize_36;
+    }
+  }
+}

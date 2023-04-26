@@ -1,0 +1,30 @@
+.input {
+  padding-top: 0.313rem;
+  padding-bottom: $sm-12;
+  width: 100%;
+  display: block;
+  transition: .3s;
+  background: $white;
+  border-bottom: 1px solid $dark;
+  &:focus ~ .label,
+  &:valid ~ .label {
+    top: -1rem;
+    font-size: 0.813rem;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $accent;
+  }
+
+  &:-webkit-autofill {
+    background: $white;
+  }
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  transition: .3s;
+}
